@@ -2,8 +2,9 @@ language: objective-c
 osx_image: xcode8.3
 xcode_project: ocPlayground.xcodeproj
 xcode_schem: ocPlayground
+before_install: gem install xcpretty -N
 script: xcodebuild -project ocPlayground.xcodeproj -scheme ocPlayground -sdk iphonesimulator
-  -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.3' test
+  -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.3' test | xcpretty -c
 notifications:
   slack:
     rooms:
