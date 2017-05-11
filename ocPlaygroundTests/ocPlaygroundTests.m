@@ -51,9 +51,10 @@
 }
 
 - (void)testWeakRef {
-//#pragma clang diagnostic push
-//#pragma clang diagnostic ignored "-Wall"
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-unsafe-retained-assign"
     __weak NSObject *object = [[NSObject alloc] init];
+#pragma clang diagnostic pop
     XCTAssert(!object);
     __weak NSObject *otherObj;
     NSObject *oneStrongObj = [[NSObject alloc] init];
@@ -61,8 +62,6 @@
     XCTAssert(otherObj);
     oneStrongObj = nil;
     XCTAssert(!oneStrongObj);
-    
-//#pragma clang diagnostic pop
 }
 
 - (void)testAutoreleasingRef {
