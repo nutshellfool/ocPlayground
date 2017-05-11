@@ -15,6 +15,7 @@
 		A5F3D45D1EC49B7D0069151B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F3D45B1EC49B7D0069151B /* LaunchScreen.storyboard */; };
 		A5F3D4681EC49B7D0069151B /* ocPlaygroundTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F3D4671EC49B7D0069151B /* ocPlaygroundTests.m */; };
 		A5F3D4731EC49B7D0069151B /* ocPlaygroundUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F3D4721EC49B7D0069151B /* ocPlaygroundUITests.m */; };
+		A5F3D4821EC4ACF00069151B /* OCPGTestPropertyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F3D4811EC4ACF00069151B /* OCPGTestPropertyObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		A5F3D46E1EC49B7D0069151B /* ocPlaygroundUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ocPlaygroundUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5F3D4721EC49B7D0069151B /* ocPlaygroundUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ocPlaygroundUITests.m; sourceTree = "<group>"; };
 		A5F3D4741EC49B7D0069151B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5F3D4801EC4ACF00069151B /* OCPGTestPropertyObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCPGTestPropertyObject.h; sourceTree = "<group>"; };
+		A5F3D4811EC4ACF00069151B /* OCPGTestPropertyObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCPGTestPropertyObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,7 @@
 				A5F3D4511EC49B7D0069151B /* AppDelegate.m */,
 				A5F3D4531EC49B7D0069151B /* ViewController.h */,
 				A5F3D4541EC49B7D0069151B /* ViewController.m */,
+				A5F3D4831EC4ACFB0069151B /* Model */,
 				A5F3D4561EC49B7D0069151B /* Main.storyboard */,
 				A5F3D4591EC49B7D0069151B /* Assets.xcassets */,
 				A5F3D45B1EC49B7D0069151B /* LaunchScreen.storyboard */,
@@ -138,6 +142,15 @@
 				A5F3D4741EC49B7D0069151B /* Info.plist */,
 			);
 			path = ocPlaygroundUITests;
+			sourceTree = "<group>";
+		};
+		A5F3D4831EC4ACFB0069151B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A5F3D4801EC4ACF00069151B /* OCPGTestPropertyObject.h */,
+				A5F3D4811EC4ACF00069151B /* OCPGTestPropertyObject.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5F3D4821EC4ACF00069151B /* OCPGTestPropertyObject.m in Sources */,
 				A5F3D4551EC49B7D0069151B /* ViewController.m in Sources */,
 				A5F3D4521EC49B7D0069151B /* AppDelegate.m in Sources */,
 				A5F3D44F1EC49B7D0069151B /* main.m in Sources */,

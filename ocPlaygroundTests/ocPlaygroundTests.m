@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "OCPGTestPropertyObject.h"
 
 @interface ocPlaygroundTests : XCTestCase
 
@@ -36,4 +37,58 @@
     }];
 }
 
+- (void)testStrongRef {
+    __strong NSObject *object = [[NSObject alloc] init];
+    XCTAssert(object);
+    
+    NSObject *otherObj = object;
+    XCTAssert(otherObj);
+    
+    object = nil;
+    XCTAssert(!object);
+    XCTAssert(otherObj);
+    
+}
+
+- (void)testWeakRef {
+//#pragma clang diagnostic push
+//#pragma clang diagnostic ignored "-Wall"
+    __weak NSObject *object = [[NSObject alloc] init];
+    XCTAssert(!object);
+    __weak NSObject *otherObj;
+    NSObject *oneStrongObj = [[NSObject alloc] init];
+    otherObj = oneStrongObj;
+    XCTAssert(otherObj);
+    oneStrongObj = nil;
+    XCTAssert(!oneStrongObj);
+    
+//#pragma clang diagnostic pop
+}
+
+- (void)testAutoreleasingRef {
+    __autoreleasing NSObject *object = [[NSObject alloc] init];
+    __autoreleasing NSObject *obj1 = nil;
+    XCTAssert(object);
+    @autoreleasepool {
+         obj1 = [[NSObject alloc] init];
+    }
+    XCTAssert(obj1);
+}
+
+- (void)testCopyRef {
+    
+    OCPGTestPropertyObject *propObj = [[OCPGTestPropertyObject alloc] init];
+    
+    NSMutableString *mutableString = [[NSMutableString alloc] init];
+    propObj.copyedString = mutableString;
+    XCTAssert([propObj.copyedString isKindOfClass:[NSString class]]);
+    
+    NSMutableArray *mutableArray = [[NSMutableArray alloc] init];
+    propObj.copyedArray = mutableArray;
+    XCTAssert([propObj.copyedArray isKindOfClass:[NSArray class]]);
+    
+    propObj.copyedMutableArray = mutableArray;
+    XCTAssert(![propObj.copyedMutableArray isKindOfClass:[NSMutableArray class]]);
+    XCTAssert(![propObj.copyedMutableArray respondsToSelector:@selector(addObject:)]);
+}
 @end
