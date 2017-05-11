@@ -3,4 +3,4 @@
 A demonstration for Objective-C programing language and iOS feature
 > "Talk is cheap, show me the code"  
 
-Anything that can be demonstrate by coding, don't just talk.
+Anything that can be demonstrated by coding, don't just talk.
