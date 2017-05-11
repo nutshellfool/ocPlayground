@@ -2,4 +2,9 @@ language: objective-c
 osx_image: xcode8.3
 xcode_project: ocPlayground.xcodeproj
 xcode_schem: ocPlayground
-script: xcodebuild -project ocPlayground.xcodeproj -scheme ocPlayground -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.3' test
+script: xcodebuild -project ocPlayground.xcodeproj -scheme ocPlayground -sdk iphonesimulator
+  -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.3' test
+notifications:
+  slack:
+    rooms:
+      - secure: fg7qS8w5yYgbaeMf7imJP6Cn1nEWSREOiRG/9XifuM9KcOxqCrnVqIOMVXLOTuWp99MZyHb/zCvXMmDgBOxqjY+ro/w+MAPfluuSKgDy80T5a/om1ttTJ0W2VR5X1C1OR0qMx7ajT4eFQdrdIyZIN1AEfPK5aH/34LiHmoy3Kfp5LlfNLBFSPuV2XmzR3gHwY4g3Bzz+TigQncfedBomC+mNQwAuuWa2gNf+rYMDDGpLVwQHoJcRU6pD6uFt2qbKnQ7Nbi2bBIP38yqNvC/FHo0TkqnJJHtqXuYy3qcW5QIpRcgKePG/0vHp3xVkPXVnDBa2ex8Db8Yl3tSqJgMuVt/KS4BBF1akgKxu1SgxjX4rE1E1nfSHoKYD9vfB5MawQnNP+MKI1QbX3HoBwTNNcnhSVVxAprdTCp92oBcJ2j180tJbmiwz7Y2fK742nuvK5SyNonqclGg0bjKNTiBzm+MhQVFk433wl4okzpUKrY5r9xKpjBQBgKyjUeQ8ARUDHbsPnvC456QSjWG1JaC8BTTGV75tBDCzWK5oDKiMoePChuK8kCEtGaUW8aLhNfr1n5Qkvjk4HrkdIqliUQF1ACC62vf0s0A1B+zN3Z5AxyL1zpvATlnct5j+GWMjQ+SWNYn7TxDvtKXO8ak8Idwiis3t+oUfaFZZp/VkKpV5d4A=
