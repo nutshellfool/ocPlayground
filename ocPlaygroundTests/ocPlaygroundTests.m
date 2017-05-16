@@ -47,7 +47,6 @@
     object = nil;
     XCTAssert(!object);
     XCTAssert(otherObj);
-    
 }
 
 - (void)testWeakRef {
@@ -64,18 +63,31 @@
     XCTAssert(!oneStrongObj);
 }
 
+- (void)testWeakStringVarRef {
+    NSString *string = @"testWeakRef";
+    __weak id weakRef = string;
+    XCTAssert(weakRef);
+    string = nil;
+    XCTAssert(weakRef);
+}
+
 - (void)testAutoreleasingRef {
-    __autoreleasing NSObject *object = [[NSObject alloc] init];
-    __autoreleasing NSObject *obj1 = nil;
-    XCTAssert(object);
-    @autoreleasepool {
-         obj1 = [[NSObject alloc] init];
-    }
-    XCTAssert(obj1);
+//    __autoreleasing NSObject *object = [[NSObject alloc] init];
+//    __autoreleasing NSObject *obj1 = nil;
+//    XCTAssert(object);
+//    @autoreleasepool {
+//        obj1 = [[NSObject alloc] init];
+//    }
+//    XCTAssert(obj1);
+    
+    // Actually I have no idea how to write the test case
+    // on demostrating the autoreleasing variables.
+    // the key point of the autorelease variable are
+    // 1. this autorelase variable memory will be relased when jump out of the @autorealeasepool scope.
+    // 2. within the viewcontroller lifecycle, the variable will be released in the runloop.
 }
 
 - (void)testCopyRef {
-    
     OCPGTestPropertyObject *propObj = [[OCPGTestPropertyObject alloc] init];
     
     NSMutableString *mutableString = [[NSMutableString alloc] init];
