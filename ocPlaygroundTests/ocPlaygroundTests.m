@@ -65,7 +65,7 @@
 
 - (void)testWeakStringVarRef {
     NSString *string = @"testWeakRef";
-    __weak id weakRef = string;
+    __weak NSString *weakRef = string;
     XCTAssert(weakRef);
     string = nil;
     XCTAssert(weakRef);
